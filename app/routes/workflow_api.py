@@ -10,9 +10,9 @@ def run_model():
     Body: { "workflow_file": "workflow1.json" }
     """
     data = request.get_json()
-    if not data or "workflow_file" not in data:
-        return jsonify({"error": "workflow_file is required"}), 400
+    if not data or "prompt" not in data:
+        return jsonify({"error": "prompt is required"}), 400
 
-    result = run_workflow(data["workflow_file"])
+    result = run_workflow(params=data)
     return jsonify(result), result["status_code"]
 
