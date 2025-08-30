@@ -4,7 +4,7 @@ from flask import current_app
 
 def run_workflow(params: dict):
     # Load template once (better to cache this at app startup)
-    with open("app/input/api2.json.j2", "r", encoding="utf-8") as f:
+    with open("app/input/workflow1.json.j2", "r", encoding="utf-8") as f:
         template_str = f.read()
 
     # Default values if user doesn't supply
